@@ -1437,3 +1437,8 @@ textarea:focus,
 .smart-alert b { color:#f4f0e7; font-size:12px; }
 .smart-alert span { color:#aaa69c; font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
 @media(max-width:720px) { .comparison-panel,.smart-alerts { padding:16px; } .comparison-grid { grid-template-columns:1fr; } }
+
+.command-result.command-action { display:flex; align-items:center; gap:10px; }
+.command-result.command-action svg { color:#e2c477; }
+.command-result.command-action kbd { margin-left:auto; padding:3px 7px; border:1px solid rgba(226,196,119,.2); border-radius:6px; color:#aaa69c; font-size:10px; }
+.command-result.command-action:hover { background:rgba(226,196,119,.08)!important; border-color:rgba(226,196,119,.24)!important; }
