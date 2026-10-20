@@ -51,3 +51,81 @@
 .summary-card.lilac b {
   color: #f0d890;
 }
+
+/* Import / Export surfaces tuned to the dark emerald + champagne-gold system */
+.import-hero h2 em,
+.export-panel h2 em { color: #d9bd78; }
+.import-badge {
+  background: linear-gradient(145deg, #d9bd7828, #d9bd780d);
+  color: #e7cb7e;
+  border: 1px solid #d9bd7840;
+  box-shadow: 0 8px 24px #0002;
+}
+.import-hero p,
+.export-panel > p { color: #9aab9e; }
+.import-note { color: #d9bd78; }
+.import-note span { color: #9eafa2; }
+.upload-zone {
+  background: linear-gradient(145deg, #17291f, #0e1a13);
+  border-color: #3b5140;
+  color: #e2eae1;
+  transition: border-color .28s var(--ease), background .28s var(--ease), box-shadow .28s var(--ease);
+}
+.upload-zone:hover,
+.upload-zone:focus-within {
+  background: linear-gradient(145deg, #1b3023, #112017);
+  border-color: #d9bd7880;
+  box-shadow: 0 0 0 3px #d9bd7810, 0 12px 28px #0002;
+}
+.upload-zone b { color: #e8eee5; }
+.upload-zone small { color: #91a296; }
+.upload-icon {
+  background: #d9bd781a;
+  color: #e4c879;
+  border-color: #d9bd7835;
+}
+.upload-zone .soft-btn {
+  background: #1a2a20;
+  border-color: #3a4c3d;
+  color: #e6cf8b;
+}
+.export-art-ring { border-color: #d9bd7840; }
+.export-art-icon {
+  background: linear-gradient(145deg, #e7ce8b, #b99a4d);
+  color: #132018;
+  box-shadow: 0 8px 28px #d9bd781b;
+}
+.export-stat {
+  background: linear-gradient(145deg, #17291f, #101c15);
+  border-color: #2e4434;
+}
+.export-stat span { color: #94a69a; }
+.export-stat b { color: #f0d890; }
+.export-wide { box-shadow: 0 8px 24px #d9bd7815; }
+.export-panel .text-action { color: #d9bd78; }
+.export-panel .text-action:hover { color: #fff0b7; }
+.csv-guide code {
+  color: #e4ce8d;
+  background: #d9bd7814;
+  border: 1px solid #d9bd7822;
+}
+.guide-icon {
+  background: #d9bd7818;
+  color: #d9bd78;
+  border: 1px solid #d9bd7830;
+}
+.mapping-grid label { color: #a6b5a8; }
+.mapping-grid select {
+  background: #0b1710;
+  border-color: #344838;
+  color: #e2e9e2;
+}
+.preview-stats { color: #a7b5a8; }
+.valid-stat { color: #91d0a7; }
+.invalid-stat { color: #e0a2a2; }
+.valid-tag { background: #1b3927; color: #9ed9b0; border-color: #315c3d; }
+.invalid-tag { background: #3a2425; color: #e9aaaa; border-color: #674042; }
+.preview-bottom {
+  border-top-color: #293b2f;
+  color: #95a69a;
+}
