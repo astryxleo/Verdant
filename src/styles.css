@@ -301,3 +301,45 @@ input::placeholder,textarea::placeholder{color:#668477!important}
   .app-shell:after{opacity:.18;background-size:420px 380px,500px 440px,400px 500px,520px 420px,450px 500px}
   .panel:hover,.category-card:hover{transform:none}
 }
+
+
+/* Export hero: animate its existing orbital emblem, too */
+.export-art-ring{
+  animation:verdant-export-orbit 10s linear infinite;
+  transform-origin:50% 50%;
+  will-change:transform;
+}
+.export-art-icon{
+  position:relative;
+  z-index:1;
+  animation:verdant-export-core 4.5s ease-in-out infinite;
+  transform-origin:50% 50%;
+}
+.export-art:before{
+  content:"";
+  position:absolute;
+  inset:8%;
+  border-radius:50%;
+  border:1px solid rgba(14,230,160,.18);
+  box-shadow:0 0 24px rgba(14,230,160,.08),inset 0 0 20px rgba(14,230,160,.045);
+  animation:verdant-export-halo 3.8s ease-in-out infinite;
+  pointer-events:none;
+}
+.export-art:after{
+  content:"";
+  position:absolute;
+  width:7px;height:7px;border-radius:50%;
+  top:15%;left:24%;
+  background:var(--verdant-gold,#d8b765);
+  box-shadow:0 0 12px rgba(216,183,101,.85),0 0 24px rgba(216,183,101,.35);
+  transform-origin:145% 300%;
+  animation:verdant-export-satellite 8s linear infinite;
+  pointer-events:none;
+}
+.export-panel:hover .export-art-ring{animation-duration:4s}
+.export-panel:hover .export-art-icon{animation-duration:2s}
+@keyframes verdant-export-orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes verdant-export-core{0%,100%{transform:translateY(0) scale(1);filter:drop-shadow(0 0 5px rgba(14,230,160,.18))}50%{transform:translateY(-3px) scale(1.055);filter:drop-shadow(0 0 12px rgba(14,230,160,.38))}}
+@keyframes verdant-export-halo{0%,100%{transform:scale(.94);opacity:.45}50%{transform:scale(1.04);opacity:.95}}
+@keyframes verdant-export-satellite{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.export-art-ring,.export-art-icon,.export-art:before,.export-art:after{animation:none!important;will-change:auto}}
