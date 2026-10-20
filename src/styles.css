@@ -343,3 +343,53 @@ input::placeholder,textarea::placeholder{color:#668477!important}
 @keyframes verdant-export-halo{0%,100%{transform:scale(.94);opacity:.45}50%{transform:scale(1.04);opacity:.95}}
 @keyframes verdant-export-satellite{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.export-art-ring,.export-art-icon,.export-art:before,.export-art:after{animation:none!important;will-change:auto}}
+
+
+/* Seamless emerald + gold aurora flowing continuously across interactive buttons */
+.btn,.soft-btn,.ghost,.icon-btn,button:not(.orbit-item){
+  isolation:isolate;
+  position:relative;
+  overflow:hidden;
+}
+.btn:before,.soft-btn:before,.ghost:before,.icon-btn:before,button:not(.orbit-item):before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:
+    repeating-linear-gradient(112deg,
+      transparent 0%,rgba(14,230,160,.02) 7%,
+      rgba(14,230,160,.22) 13%,rgba(216,183,101,.18) 18%,
+      rgba(14,230,160,.06) 24%,transparent 31%,
+      transparent 42%),
+    repeating-linear-gradient(248deg,
+      transparent 0%,rgba(216,183,101,.04) 10%,
+      rgba(216,183,101,.2) 16%,rgba(14,230,160,.14) 22%,
+      transparent 34%,transparent 50%);
+  background-size:200% 100%,200% 100%;
+  background-position:0% 50%,100% 50%;
+  opacity:.72;
+  animation:verdant-button-aurora 12s linear infinite;
+  will-change:background-position;
+}
+.btn:hover:before,.soft-btn:hover:before,.ghost:hover:before,.icon-btn:hover:before,button:not(.orbit-item):hover:before{
+  opacity:1;
+  filter:saturate(1.25) brightness(1.12);
+}
+.btn > *,.soft-btn > *,.ghost > *,.icon-btn > *,button:not(.orbit-item) > *{
+  position:relative;
+  z-index:1;
+}
+@keyframes verdant-button-aurora{
+  0%{background-position:0% 50%,100% 50%}
+  100%{background-position:200% 50%,-100% 50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn:before,.soft-btn:before,.ghost:before,.icon-btn:before,button:not(.orbit-item):before{
+    animation:none!important;
+    background-position:50% 50%,50% 50%;
+    will-change:auto;
+  }
+}
