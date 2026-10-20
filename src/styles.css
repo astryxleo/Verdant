@@ -360,6 +360,8 @@ body.verdant-custom-cursor *::after {
 }
 .verdant-cursor.is-visible { opacity: 1; visibility: visible; }
 .verdant-cursor-art {
+  width: 30px;
+  height: 38px;
   position: absolute;
   left: 0;
   top: 0;
@@ -368,7 +370,7 @@ body.verdant-custom-cursor *::after {
   filter: drop-shadow(0 1px 1px #000b);
 }
 .verdant-cursor.is-arrow .verdant-cursor-art { transform: translate(-2px,-2px); }
-.verdant-cursor.is-pointer .verdant-cursor-art { transform: translate(-5px,-3px); }
+.verdant-cursor.is-pointer .verdant-cursor-art { width: 32px; height: 39px; transform: translate(-3px,-2px); }
 @media (pointer: coarse) {
   body.verdant-custom-cursor,
   body.verdant-custom-cursor *,
