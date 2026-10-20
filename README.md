@@ -1,45 +1,97 @@
-# Verdant Finance Tracker
+# Verdant — Personal Finance, with clarity
 
-Premium dark + emerald personal finance tracker. React + Vite + Supabase; no Docker required.
+![Verdant](https://img.shields.io/badge/Verdant-Personal%20Finance-5ce0a1?style=for-the-badge&labelColor=08110c)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Postgres%20%2B%20Auth-3FCF8E?logo=supabase&logoColor=white)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
 
-## Features
-- Supabase email/password sign-up and login
-- Income/expense transactions with categories, notes and dates
-- Balance, income, expenses, savings rate
-- Cashflow chart, spending breakdown, search/filter, CSV export
-- PostgreSQL Row Level Security so users can access only their own records
-- Responsive UI and Vercel-ready configuration
+Verdant is a privacy-minded personal finance dashboard built with React, Vite, Supabase Auth, and PostgreSQL. It focuses on a calm, premium black-and-emerald interface and fast everyday money tracking.
 
-## Setup
-1. Install Node.js LTS from https://nodejs.org/ and Git from https://git-scm.com/downloads.
-2. Create a project at https://supabase.com/.
-3. In Supabase: SQL Editor → New query. Paste and run `supabase/schema.sql`.
-4. Copy the Supabase Project URL and publishable/anon key from the API settings.
-5. Copy `.env.example` to `.env`, then fill in:
-   `VITE_SUPABASE_URL=https://YOUR-PROJECT.supabase.co`
-   `VITE_SUPABASE_ANON_KEY=YOUR_PUBLIC_PUBLISHABLE_OR_ANON_KEY`
-6. In Command Prompt, in this project folder, run:
-   `npm install`
-   `npm run dev`
-7. Open the localhost URL shown by Vite (usually http://localhost:5173).
+## Product capabilities
 
-## GitHub
-Create an empty repository at https://github.com/new, then in this folder:
+- **Private accounts:** email/password sign-up and sign-in with Supabase Auth.
+- **Transaction ledger:** record income and expenses with categories, dates, and notes.
+- **Financial overview:** balance, income, expenses, savings rate, weekly cashflow, and category breakdown.
+- **Find and export:** search transactions, filter by type, export a CSV.
+- **Monthly intelligence:** selectable month, income/expense/net-cashflow totals, category insights, and comparison with the previous month.
+- **Budgets and goals:** monthly category spending limits, overspend indicators, savings goals, progress tracking, and optional target dates.
+- **Quality checks:** Node built-in unit tests for financial calculation helpers and a GitHub Actions test/build workflow.
+- **Responsive interface:** dark UI with loading, empty, and feedback states.
+- **Data access boundaries:** PostgreSQL Row Level Security policies are defined in `supabase/schema.sql`.
+- **Deployable without Docker:** Vite production build, GitHub source control, and Vercel hosting.
+
+## Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| UI | React 18, CSS, Lucide |
+| Charts | Recharts |
+| Build | Vite |
+| Auth and data | Supabase Auth, PostgreSQL, RLS |
+| Hosting | Vercel |
+| Quality gate | GitHub Actions production build |
+
+## Run locally
+
+### Prerequisites
+- Node.js 20+ (LTS recommended)
+- A Supabase project
+
+### 1. Install dependencies
+```bash
+npm install
 ```
-git init
-git add .
-git commit -m "Build Verdant finance tracker"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-git push -u origin main
+
+### 2. Configure Supabase
+Create a Supabase project, then run `supabase/schema.sql` in **SQL Editor**. If the original schema is already installed, run `supabase/phase3.sql` to add budgets and savings goals; do not re-run the original schema blindly because its original policies may already exist.
+
+Copy `.env.example` to `.env` and fill in your project's browser-safe values:
+```env
+VITE_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_PUBLIC_PUBLISHABLE_OR_ANON_KEY
 ```
-Never upload `.env`.
 
-## Vercel
-1. Sign in at https://vercel.com/ with GitHub and import this repository.
-2. Framework: Vite; build command `npm run build`; output folder `dist`.
-3. Add environment variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
-4. Deploy. In Supabase Auth URL settings, add your Vercel domain to allowed redirect URLs if email confirmation is enabled.
+Use the public publishable/anon key only. Never put a Supabase secret or `service_role` key in a Vite environment variable: `VITE_*` values are shipped to browsers.
 
-## Security
-Never expose the Supabase `service_role` key in frontend code. The public anon/publishable key is intended for browser use; RLS policies protect user data. This starter does not connect to banks or move money. Review auth settings, backups and privacy requirements before production use.
+### 3. Start the development server
+```bash
+npm run dev
+```
+Open the local URL printed by Vite (usually `http://localhost:5173`).
+
+### 4. Verify a production build
+```bash
+npm test
+npm run build
+npm run preview
+```
+
+## Deploy to Vercel
+
+1. Import the GitHub repository into Vercel.
+2. Choose **Vite**, build command `npm run build`, and output directory `dist`.
+3. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel's environment-variable settings for the environments you use.
+4. Deploy and open the generated URL.
+5. In Supabase Auth URL configuration, set the deployed site's URL and any required redirect URLs.
+
+## Security and product scope
+
+- Keep Row Level Security enabled; review every table policy before launch.
+- Do not expose service-role keys or other server secrets in the browser.
+- Test account isolation with two separate test accounts.
+- The Phase 3 migration creates separate user-owned tables with row-level security and policies for select, insert, update, and delete.
+- This app records manually entered transactions; it does not connect to banks or move money.
+- This is a portfolio project, not financial advice. Review authentication, privacy, backup, accessibility, and applicable compliance requirements before handling real customer data.
+
+## Roadmap
+
+- Monthly and custom date-range analytics
+- Budget limits and savings goals
+- Transaction editing and pagination
+- Automated tests for calculations, filtering, and data access
+- Accessible keyboard flows and reduced-motion support
+
+## Contributing
+
+Use a feature branch, keep changes focused, and verify `npm run build` before opening a pull request. Never commit `.env`, credentials, or real financial data.
