@@ -5,6 +5,7 @@ import{Wallet,ArrowDownLeft,ArrowUpRight,TrendingUp,Plus,Search,Trash2,LogOut,Sh
 import{Area,AreaChart,CartesianGrid,ResponsiveContainer,Tooltip,XAxis,YAxis,PieChart,Pie,Cell}from'recharts';
 import'./styles.css';
 import OrbitNav from './OrbitNav.jsx';
+import VerdantCursor from './VerdantCursor.jsx';
 import Phase3Panel from './Phase3Panel.jsx';
 import RecurringPanel from './RecurringPanel.jsx';
 import FinanceCalendar from './FinanceCalendar.jsx';
@@ -56,4 +57,4 @@ function Metric({title,value,icon,tone,foot}){return <div className="metric"><di
 function catIcon(c){let p={size:17};if(['Salary','Freelance','Investments'].includes(c))return <BriefcaseBusiness {...p}/>;if(c==='Food')return <Utensils {...p}/>;if(c==='Transport')return <Car {...p}/>;if(c==='Shopping')return <ShoppingBag {...p}/>;if(c==='Health')return <HeartPulse {...p}/>;if(c==='Education')return <GraduationCap {...p}/>;if(['Home','Bills'].includes(c))return <House {...p}/>;return <BadgeIndianRupee {...p}/>}
 function exportMonthlyReport(rows,month){const q=v=>'"'+String(v??'').replaceAll('"','""')+'"',income=rows.filter(r=>r.type==='income').reduce((s,r)=>s+Number(r.amount),0),expenses=rows.filter(r=>r.type==='expense').reduce((s,r)=>s+Number(r.amount),0),cats={};rows.filter(r=>r.type==='expense').forEach(r=>cats[r.category]=(cats[r.category]||0)+Number(r.amount));const lines=[['Verdant monthly report',month],['Income',income],['Expenses',expenses],['Net cashflow',income-expenses],['Transaction count',rows.length],[],['Expense category','Amount'],...Object.entries(cats).sort((a,b)=>b[1]-a[1]),[],['Date','Title','Type','Category','Amount','Note'],...rows.map(r=>[r.transaction_date,r.title,r.type,r.category,r.amount,r.note||''])];const csv=lines.map(row=>row.map(q).join(',')).join('\r\n'),url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'})),a=document.createElement('a');a.href=url;a.download='verdant-monthly-report-'+month+'.csv';a.click();URL.revokeObjectURL(url)}
 function exportCSV(rows){let keys=['title','type','amount','category','transaction_date','note'],q=v=>`"${String(v??'').replaceAll('"','""')}"`,csv=[keys.join(','),...rows.map(r=>keys.map(k=>q(r[k])).join(','))].join('\r\n'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'})),a=document.createElement('a');a.href=u;a.download='verdant-transactions.csv';a.click();URL.revokeObjectURL(u)}
-createRoot(document.getElementById('root')).render(<App/>);
+createRoot(document.getElementById('root')).render(<><App/><VerdantCursor/></>);
