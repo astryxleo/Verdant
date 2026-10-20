@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "Verdant — Personal Finance",
+  "short_name": "Verdant",
+  "description": "A calmer, clearer view of your money.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07110c",
+  "theme_color": "#07110c",
+  "icons": [
+    { "src": "/verdant-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
