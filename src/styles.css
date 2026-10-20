@@ -1492,3 +1492,53 @@ textarea:focus,
  .health-tips .link { margin-left:39px; }
 }
 @media(max-width:420px) { .health-metric-grid { grid-template-columns:1fr; } .health-hero h2 { font-size:25px; } }
+
+
+/* RECURRING TRANSACTIONS — larger, clearer form controls */
+.recurring-form {
+  gap: 20px !important;
+  padding: 24px !important;
+  margin-top: 20px !important;
+  border-radius: 18px !important;
+}
+.recurring-form label {
+  gap: 9px !important;
+  font-size: 11px !important;
+  letter-spacing: .11em !important;
+  line-height: 1.5 !important;
+}
+.recurring-form input,
+.recurring-form select {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 50px !important;
+  padding: 13px 15px !important;
+  border-radius: 11px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+.recurring-form .formrow {
+  gap: 16px !important;
+}
+.recurring-form .btn {
+  min-height: 50px !important;
+  margin-top: 2px !important;
+  font-size: 13px !important;
+  border-radius: 12px !important;
+}
+@media (max-width: 720px) {
+  .recurring-form {
+    gap: 17px !important;
+    padding: 17px !important;
+  }
+  .recurring-form .formrow {
+    grid-template-columns: 1fr !important;
+    gap: 17px !important;
+  }
+  .recurring-form input,
+  .recurring-form select {
+    min-height: 48px !important;
+    font-size: 14px !important;
+  }
+}
