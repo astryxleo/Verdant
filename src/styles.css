@@ -1542,3 +1542,39 @@ textarea:focus,
     font-size: 14px !important;
   }
 }
+
+
+/* GOALS & BUDGETS — larger, more comfortable form fields */
+.planning-panel .inline-create-form {
+  gap: 18px !important;
+  padding: 22px !important;
+}
+.planning-panel .inline-create-form label {
+  gap: 9px !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  letter-spacing: .08em !important;
+}
+.planning-panel .inline-create-form input,
+.planning-panel .inline-create-form select {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 50px !important;
+  padding: 13px 15px !important;
+  border-radius: 11px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+.planning-panel .inline-create-form .formrow { gap: 16px !important; }
+.planning-panel .inline-create-form .btn {
+  min-height: 50px !important;
+  font-size: 13px !important;
+  border-radius: 12px !important;
+}
+@media (max-width: 720px) {
+  .planning-panel .inline-create-form { gap: 17px !important; padding: 16px !important; }
+  .planning-panel .inline-create-form .formrow { grid-template-columns: 1fr !important; gap: 17px !important; }
+  .planning-panel .inline-create-form input,
+  .planning-panel .inline-create-form select { min-height: 48px !important; font-size: 14px !important; }
+}
