@@ -1578,3 +1578,46 @@ textarea:focus,
   .planning-panel .inline-create-form input,
   .planning-panel .inline-create-form select { min-height: 48px !important; font-size: 14px !important; }
 }
+
+/* Profile photo upload and crisp avatar rendering */
+.avatar img,
+.profile-preview-avatar img,
+.profile-photo-large img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.profile-photo-row {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 18px;
+  border: 1px solid rgba(212, 181, 105, .2);
+  border-radius: 16px;
+  background: linear-gradient(115deg, rgba(212, 181, 105, .075), rgba(255,255,255,.018));
+}
+.profile-photo-large {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #d7bd7d;
+  background: #151a16;
+  border: 1px solid rgba(212, 181, 105, .45);
+  box-shadow: 0 0 25px rgba(212, 181, 105, .08);
+}
+.profile-photo-copy { display: grid; justify-items: start; gap: 7px; min-width: 0; }
+.profile-photo-copy b { color: #f2ead7; font-size: 13px; }
+.profile-photo-copy span { color: #a6a092; font-size: 11px; line-height: 1.5; }
+.profile-photo-button { position: relative; overflow: hidden; margin-top: 3px; }
+.profile-photo-button input { cursor: pointer; }
+.avatar { overflow: hidden; flex-shrink: 0; }
+@media (max-width: 520px) {
+  .profile-photo-row { align-items: flex-start; padding: 14px; gap: 13px; }
+  .profile-photo-large { width: 62px; height: 62px; flex-basis: 62px; }
+}
