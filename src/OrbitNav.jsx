@@ -9,7 +9,7 @@ const items=[
  {label:'Recurring',id:'recurring',Icon:Repeat},
  {label:'Insights',id:'reports',Icon:ChartNoAxesCombined}
 ];
-const angles=[-90,-54,-18,18,54,90];
+const angles=[-90,-30,30,90,150,210];
 const wrap=a=>((a+180)%360+360)%360-180;
 function closestItem(rotation){
  let best=0,score=Infinity;
@@ -49,11 +49,11 @@ export default function OrbitNav({transactionCount=0,activeTab='overview',onNavi
  const selected=items[closestItem(rotation)].id;
  return <nav className="orbit-nav" aria-label="Main navigation">
   <div className="orbit-heading"><span className="orbit-live"/> VERDANT <small>ROTATE TO NAVIGATE</small></div>
-  <div className={'orbit-stage '+(dragging?'is-dragging':'')} ref={stage} onPointerDown={start} onPointerMove={move} onPointerUp={end} onPointerCancel={end} role="group" aria-label="Drag the semicircle to change tabs">
+  <div className={'orbit-stage '+(dragging?'is-dragging':'')} ref={stage} onPointerDown={start} onPointerMove={move} onPointerUp={end} onPointerCancel={end} role="group" aria-label="Drag the circular dial to change tabs">
    <div className="orbit-half-track" style={{transform:`rotate(${rotation}deg)`}}/>
    {items.map((item,index)=>{
     const angle=(angles[index]+rotation)*Math.PI/180;
-    const x=105+105*Math.cos(angle),y=135+105*Math.sin(angle),Icon=item.Icon;
+    const x=119+91*Math.cos(angle),y=135+91*Math.sin(angle),Icon=item.Icon;
     const isActive=activeTab===item.id;
     return <button key={item.id} type="button" className={'orbit-node '+(selected===item.id?'orbit-at-marker ':'')+(isActive?'selected':'')} style={{left:x,top:y}} onClick={e=>{e.stopPropagation();choose(item,index)}} onPointerDown={e=>e.stopPropagation()} aria-label={'Open '+item.label} aria-current={isActive?'page':undefined} title={item.label}>
      <span className="orbit-icon"><Icon size={17}/></span>
@@ -62,6 +62,6 @@ export default function OrbitNav({transactionCount=0,activeTab='overview',onNavi
    })}
    <div className="orbit-right-marker" aria-hidden="true"><span/></div>
   </div>
-  <div className="orbit-hint"><span>●</span> Drag the arc — icon beside the dot opens</div>
+  <div className="orbit-hint"><span>●</span> Drag the circle — icon beside the dot opens</div>
  </nav>;
 }
