@@ -844,3 +844,18 @@ select:focus-visible,
 textarea:focus-visible {
   outline-color: rgba(224,194,119,.78) !important;
 }
+
+
+/* Remove decorative logo and triple-orbit artwork behind the sidebar navigation */
+.orbit-nav .orbit-track,
+.orbit-nav .orbit-track::before,
+.orbit-nav .orbit-track::after,
+.orbit-nav .orbit-core {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.orbit-nav {
+  background: transparent !important;
+}
