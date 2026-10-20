@@ -1059,3 +1059,120 @@ textarea:focus,
   .confirm-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .confirm-actions button { justify-content: center; }
 }
+
+
+/* FINAL BLACK-WHITE-CHAMPAGNE-GOLD: CHARTS + IMPORT/EXPORT */
+:root { --verdant-gold: #e2c477; --verdant-white: #f4f0e7; --verdant-black: #090909; }
+
+/* Reports: replace emerald chart strokes, fills, and SVG accents */
+.report-chart .recharts-area-curve,
+.report-chart .recharts-line-curve { stroke: #e2c477 !important; }
+.report-chart .recharts-area-curve:nth-of-type(2),
+.report-chart .recharts-line-curve:nth-of-type(2) { stroke: #d7d4cc !important; }
+.report-chart .recharts-area-area { fill: rgba(226,196,119,.14) !important; }
+.report-chart .recharts-cartesian-grid line { stroke: rgba(255,255,255,.09) !important; }
+.report-chart .recharts-cartesian-axis-line,
+.report-chart .recharts-cartesian-axis-tick-line { stroke: rgba(255,255,255,.16) !important; }
+.report-chart .recharts-cartesian-axis-tick-value,
+.report-chart .recharts-text { fill: #aaa69c !important; }
+.report-chart .recharts-tooltip-wrapper .recharts-default-tooltip,
+.report-donut .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #141414 !important; border: 1px solid rgba(226,196,119,.28) !important;
+  color: #f4f0e7 !important; box-shadow: 0 12px 36px rgba(0,0,0,.5) !important;
+}
+.report-chart defs stop { stop-color: #e2c477 !important; }
+.report-chart .recharts-area-curve[stroke="#78ae99"],
+.report-chart .recharts-area-curve[stroke="#d8a493"] { stroke: #e2c477 !important; }
+.report-chart .recharts-area-area[fill="#d8a49318"] { fill: rgba(215,212,204,.08) !important; }
+.report-donut .recharts-pie-sector path[fill] { stroke: #0b0b0b !important; stroke-width: 2px !important; }
+.report-donut .recharts-pie-sector:nth-child(4n + 1) path { fill: #e2c477 !important; }
+.report-donut .recharts-pie-sector:nth-child(4n + 2) path { fill: #f4f0e7 !important; }
+.report-donut .recharts-pie-sector:nth-child(4n + 3) path { fill: #8f8b81 !important; }
+.report-donut .recharts-pie-sector:nth-child(4n + 4) path { fill: #655b42 !important; }
+.report-cats i { background: #e2c477 !important; }
+.report-donut-center small { color: #aaa69c !important; }
+.report-donut-center b { color: #f4f0e7 !important; }
+
+/* Import/Export: unify every surface to near-black, white, and champagne gold */
+.import-panel, .export-panel {
+  background: linear-gradient(145deg, #151515 0%, #0a0a0a 100%) !important;
+  border-color: rgba(226,196,119,.2) !important;
+  color: #f4f0e7 !important;
+}
+.import-panel .import-badge,
+.export-panel .export-art-icon,
+.import-panel .upload-icon,
+.csv-guide .guide-icon {
+  color: #e2c477 !important;
+  background: rgba(226,196,119,.09) !important;
+  border: 1px solid rgba(226,196,119,.2) !important;
+  box-shadow: none !important;
+}
+.import-panel .import-hero h2,
+.export-panel h2,
+.import-panel .import-hero h2 em,
+.export-panel h2 em { color: #fffdf7 !important; }
+.import-panel .import-hero h2 em,
+.export-panel h2 em { color: #e2c477 !important; }
+.import-panel .eyebrow, .export-panel .eyebrow { color: #e2c477 !important; }
+.import-panel .import-hero p, .export-panel > p { color: #aaa69c !important; }
+.import-panel .upload-zone {
+  background: linear-gradient(145deg, #111 0%, #090909 100%) !important;
+  color: #e2c477 !important;
+  border-color: rgba(226,196,119,.42) !important;
+}
+.import-panel .upload-zone:hover {
+  background: linear-gradient(145deg, #1a1812, #0b0b0b) !important;
+  border-color: rgba(226,196,119,.72) !important;
+  box-shadow: 0 0 24px rgba(226,196,119,.06) !important;
+}
+.import-panel .upload-zone b { color: #f4f0e7 !important; }
+.import-panel .upload-zone small { color: #969187 !important; }
+.import-panel .upload-zone .soft-btn,
+.export-panel .export-wide {
+  background: linear-gradient(120deg, #e8ce86, #b28a38) !important;
+  color: #17130a !important;
+  border: 1px solid rgba(255,239,184,.25) !important;
+  box-shadow: 0 8px 24px rgba(226,196,119,.08) !important;
+}
+.import-panel .upload-zone .soft-btn:hover,
+.export-panel .export-wide:hover { filter: brightness(1.08) !important; }
+.import-panel .import-note,
+.import-panel .import-note svg { color: #e2c477 !important; }
+.import-panel .import-note span { color: #aaa69c !important; }
+.export-panel .export-art-ring,
+.export-panel .export-art-ring::before,
+.export-panel .export-art-ring::after { border-color: rgba(226,196,119,.28) !important; }
+.export-panel .export-art-icon { color: #e2c477 !important; }
+.export-panel .export-stat > div {
+  background: rgba(255,255,255,.025) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+}
+.export-panel .export-stat span { color: #aaa69c !important; }
+.export-panel .export-stat b { color: #f4f0e7 !important; }
+.export-panel .text-action { color: #e2c477 !important; }
+.export-panel .text-action:hover { color: #fff0b5 !important; }
+.csv-guide {
+  background: linear-gradient(145deg,#141414,#090909) !important;
+  border-color: rgba(226,196,119,.18) !important;
+  color: #f4f0e7 !important;
+}
+.csv-guide b { color: #f4f0e7 !important; }
+.csv-guide p { color: #aaa69c !important; }
+.csv-guide code { background: rgba(226,196,119,.09) !important; color: #f0d58a !important; }
+.csv-guide .text-action { color: #e2c477 !important; }
+.preview-panel, .preview-panel .panelhead { background: #0d0d0d !important; }
+.preview-panel .mapping-grid label { color: #c7c1b5 !important; }
+.preview-panel .preview-stats .valid-stat,
+.preview-panel .preview-stats .valid-stat svg,
+.preview-panel .valid-tag { color: #e2c477 !important; }
+.preview-panel .valid-tag {
+  background: rgba(226,196,119,.08) !important;
+  border-color: rgba(226,196,119,.24) !important;
+}
+.preview-panel .invalid-stat,
+.preview-panel .invalid-tag { color: #c9a09a !important; }
+.preview-panel .invalid-tag { background: rgba(201,160,154,.07) !important; border-color: rgba(201,160,154,.2) !important; }
+.preview-panel .preview-bottom { color: #aaa69c !important; }
+.preview-panel .preview-bottom .btn { background: linear-gradient(120deg,#e8ce86,#b28a38) !important; color: #17130a !important; }
+.import-panel *, .export-panel *, .csv-guide *, .preview-panel * { accent-color: #e2c477; }
