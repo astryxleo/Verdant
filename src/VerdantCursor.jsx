@@ -5,7 +5,7 @@ const gold='#f6d76b';
 const ink='#080a0b';
 
 function ArrowShape(){
- return <svg className="verdant-cursor-art" width="54" height="68" viewBox="0 0 54 68" aria-hidden="true">
+ return <svg className="verdant-cursor-art" width="30" height="38" viewBox="0 0 54 68" aria-hidden="true">
   <path d="M3 3 L49 43 L29 43 L40 63 L30 67 L20 47 L8 61 Z" fill={ink} stroke={ink} strokeWidth="6" strokeLinejoin="round"/>
   <path d="M3 3 L49 43 L29 43 L40 63 L30 67 L20 47 L8 61 Z" fill="#f5f4df" stroke={gold} strokeWidth="2.6" strokeLinejoin="round"/>
   <path d="M7 8 L40 39 L26 39 L16 45 Z" fill={emerald} stroke="#111816" strokeWidth="1.8" strokeLinejoin="round"/>
@@ -15,7 +15,7 @@ function ArrowShape(){
  </svg>
 }
 function HandShape(){
- return <svg className="verdant-cursor-art" width="58" height="70" viewBox="0 0 58 70" aria-hidden="true">
+ return <svg className="verdant-cursor-art" width="32" height="39" viewBox="0 0 58 70" aria-hidden="true">
   <path d="M8 35 Q5 31 8 27 Q12 24 16 29 L20 34 L20 10 Q20 4 25 4 Q30 4 30 10 L30 27 L31 8 Q32 3 37 4 Q42 5 41 11 L40 28 L43 14 Q45 9 49 11 Q53 13 51 19 L48 35 L51 31 Q55 28 57 33 Q59 37 55 43 L47 57 Q43 64 34 65 L25 65 Q17 64 13 56 Z" transform="translate(-2 1)" fill={ink} stroke={ink} strokeWidth="6" strokeLinejoin="round"/>
   <path d="M8 35 Q5 31 8 27 Q12 24 16 29 L20 34 L20 10 Q20 4 25 4 Q30 4 30 10 L30 27 L31 8 Q32 3 37 4 Q42 5 41 11 L40 28 L43 14 Q45 9 49 11 Q53 13 51 19 L48 35 L51 31 Q55 28 57 33 Q59 37 55 43 L47 57 Q43 64 34 65 L25 65 Q17 64 13 56 Z" transform="translate(-2 1)" fill="#f5f4df" stroke={gold} strokeWidth="2.3" strokeLinejoin="round"/>
   <path d="M22 11 L22 36 L28 38 L28 10 Q27 6 25 6 Q22 7 22 11Z" fill={emerald} stroke="#16221c" strokeWidth="1.5"/>
