@@ -462,3 +462,14 @@ select option{background:#08150f;color:#e9fff4}
  .settings-footer{align-items:stretch;flex-direction:column}
  .settings-footer .btn{width:100%}
 }
+
+/* Give the six-item workspace orbit enough breathing room */
+.orbit-nav{min-height:315px;gap:5px}
+.orbit-track{height:258px}
+.orbit-item{min-height:39px;padding:5px 8px}
+@media(max-height:820px) and (min-width:761px){
+ .sidebar{overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(16,185,129,.24) transparent}
+ .orbit-nav{min-height:290px}
+ .orbit-track{height:235px}
+ .nav-label{margin-top:20px}
+}
