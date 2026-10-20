@@ -124,3 +124,32 @@ td{border-color:#252744;color:#b2b6d0}tbody tr:hover{background:#191c33}
 .recurring-private{display:flex;align-items:center;gap:7px;color:#9a9fc0;font-size:10px;margin-top:14px}.recurring-private svg{color:#75f7d0;flex-shrink:0}
 @media(max-width:1150px){.recurring-form{grid-template-columns:repeat(3,minmax(0,1fr))}.recurring-add{min-height:38px}}
 @media(max-width:650px){.recurring-panel{padding:15px 12px}.recurring-form{grid-template-columns:repeat(2,minmax(0,1fr))}.recurring-summary{gap:7px}.recurring-summary>div{padding:10px}.recurring-summary span{font-size:8px;line-height:1.5}.recurring-summary b{font-size:15px}.recurring-item{flex-wrap:wrap;gap:9px}.recurring-details{min-width:calc(100% - 60px)}.recurring-item>strong{margin-left:45px}.recurring-actions{margin-left:auto}.recurring-actions button span{display:none}}
+
+/* Financial calendar and monthly report */
+.month-tools{display:flex;align-items:center;gap:8px}
+.report-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 10px;border:1px solid #51458b;border-radius:9px;background:#211e40;color:#c6bcff;font-size:10px;white-space:nowrap}
+.report-btn:hover{border-color:#a99aff;background:#2b2650}
+.finance-calendar{padding:20px;margin-bottom:17px;border-color:#34325b;background:linear-gradient(145deg,#171a34,#101326)}
+.finance-calendar .panelhead h2{display:flex;align-items:center;gap:8px;color:#f0efff}
+.finance-calendar .panelhead h2 svg{color:#a99aff}
+.calendar-count{font-size:10px;color:#9b9fc0;white-space:nowrap}
+.calendar-summary{display:flex;gap:10px;margin:17px 0}
+.calendar-summary>div{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid #2a2e4b;border-radius:9px;background:#14182d;min-width:0}
+.calendar-summary>div:first-child svg{color:#75f7d0}.calendar-summary>div:last-child svg{color:#ff91ab}
+.calendar-summary span{font-size:10px;color:#a0a4c3}.calendar-summary b{font-size:11px;color:#eff0ff}
+.calendar-title{font-size:12px;font-weight:700;color:#e0e2ff;margin:12px 0}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.calendar-weekday{text-align:center;color:#9297b9;font-size:9px;font-weight:700;padding:7px 0}
+.calendar-day{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0;min-height:76px;padding:8px;border:1px solid #292d4a;border-radius:8px;background:#11152a;color:#e0e2ff}
+.calendar-day>span{font-size:10px;color:#bfc2df}
+.calendar-day.calendar-blank{background:transparent;border-color:transparent}
+.calendar-day.calendar-today{border-color:#a99aff;box-shadow:inset 0 0 0 1px #a99aff35}
+.calendar-day.has-activity{background:linear-gradient(145deg,#1a1c39,#12262f)}
+.calendar-dots{display:flex;gap:4px}
+.calendar-dots i,.calendar-legend i{width:6px;height:6px;display:inline-block;border-radius:50%}
+.dot-income{background:#75f7d0}.dot-expense{background:#ff91ab}
+.calendar-day small{font-size:8px;color:#969abd}
+.calendar-day b{font-size:10px;font-weight:700;overflow-wrap:anywhere}
+.calendar-legend{display:flex;align-items:center;gap:13px;margin-top:12px;color:#a0a4c3;font-size:9px}
+.calendar-legend span{display:flex;align-items:center;gap:5px}.calendar-legend small{margin-left:auto;color:#7f85a9}
+@media(max-width:650px){.finance-calendar{padding:15px 10px}.calendar-grid{gap:3px}.calendar-day{min-height:57px;padding:5px;border-radius:6px;gap:4px}.calendar-day>span{font-size:9px}.calendar-day small{font-size:7px}.calendar-day b{font-size:8px}.calendar-weekday{font-size:8px}.calendar-summary{gap:6px;flex-wrap:wrap}.calendar-summary>div{padding:8px}.calendar-summary span{font-size:9px}.calendar-summary b{font-size:10px}.month-tools{flex-wrap:wrap;justify-content:flex-end}.month-picker{max-width:125px}.report-btn{padding:8px}}
