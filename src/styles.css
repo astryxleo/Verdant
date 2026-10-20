@@ -859,3 +859,27 @@ textarea:focus-visible {
 .orbit-nav {
   background: transparent !important;
 }
+
+
+/* SUBTLE CHAMPAGNE GLOW THAT FOLLOWS THE POINTER */
+.mouse-follow-glow {
+  position: fixed;
+  z-index: 9998;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(240,213,138,.075) 0%,
+    rgba(224,194,119,.045) 28%,
+    rgba(255,255,255,.018) 48%,
+    transparent 72%);
+  filter: blur(8px);
+  transition: opacity .22s ease;
+  will-change: left, top, opacity;
+  mix-blend-mode: screen;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .mouse-follow-glow { display: none !important; }
+}
