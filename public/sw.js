@@ -1,11 +1,5 @@
-const CACHE='verdant-shell-v1';
-const SHELL=['/','/index.html','/verdant-icon.svg','/manifest.webmanifest'];
-self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
-self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',event=>{
- const req=event.request,url=new URL(req.url);
- if(req.method!=='GET'||url.origin!==self.location.origin)return;
- if(req.mode==='navigate'){event.respondWith(fetch(req).then(res=>{const copy=res.clone();caches.open(CACHE).then(cache=>cache.put('/index.html',copy));return res}).catch(()=>caches.match('/index.html')));return}
- if(['/verdant-icon.svg','/manifest.webmanifest'].includes(url.pathname)){event.respondWith(caches.match(req).then(hit=>hit||fetch(req)));return}
- if(url.pathname.startsWith('/assets/'))event.respondWith(caches.match(req).then(hit=>hit||fetch(req).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(cache=>cache.put(req,copy))}return res})))
-});
+const VERSION='verdant-shell-v2';
+self.addEventListener('install',event=>event.waitUntil(self.skipWaiting()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('verdant-shell-')&&k!==VERSION).map(k=>caches.delete(k)));await self.clients.claim()})()));
+// Deliberately network-first with no HTML/JS caching: prevents stale bundles from blanking the app.
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==self.location.origin)return;});
