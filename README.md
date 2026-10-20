@@ -14,6 +14,9 @@ Verdant is a privacy-minded personal finance dashboard built with React, Vite, S
 - **Transaction ledger:** record income and expenses with categories, dates, and notes.
 - **Financial overview:** balance, income, expenses, savings rate, weekly cashflow, and category breakdown.
 - **Find and export:** search transactions, filter by type, export a CSV.
+- **Monthly intelligence:** selectable month, income/expense/net-cashflow totals, category insights, and comparison with the previous month.
+- **Budgets and goals:** monthly category spending limits, overspend indicators, savings goals, progress tracking, and optional target dates.
+- **Quality checks:** Node built-in unit tests for financial calculation helpers and a GitHub Actions test/build workflow.
 - **Responsive interface:** dark UI with loading, empty, and feedback states.
 - **Data access boundaries:** PostgreSQL Row Level Security policies are defined in `supabase/schema.sql`.
 - **Deployable without Docker:** Vite production build, GitHub source control, and Vercel hosting.
@@ -41,7 +44,7 @@ npm install
 ```
 
 ### 2. Configure Supabase
-Create a Supabase project, then run `supabase/schema.sql` in **SQL Editor**.
+Create a Supabase project, then run `supabase/schema.sql` in **SQL Editor**. If the original schema is already installed, run `supabase/phase3.sql` to add budgets and savings goals; do not re-run the original schema blindly because its original policies may already exist.
 
 Copy `.env.example` to `.env` and fill in your project's browser-safe values:
 ```env
@@ -59,6 +62,7 @@ Open the local URL printed by Vite (usually `http://localhost:5173`).
 
 ### 4. Verify a production build
 ```bash
+npm test
 npm run build
 npm run preview
 ```
@@ -76,6 +80,7 @@ npm run preview
 - Keep Row Level Security enabled; review every table policy before launch.
 - Do not expose service-role keys or other server secrets in the browser.
 - Test account isolation with two separate test accounts.
+- The Phase 3 migration creates separate user-owned tables with row-level security and policies for select, insert, update, and delete.
 - This app records manually entered transactions; it does not connect to banks or move money.
 - This is a portfolio project, not financial advice. Review authentication, privacy, backup, accessibility, and applicable compliance requirements before handling real customer data.
 
