@@ -1260,3 +1260,71 @@ textarea:focus,
   color: #fff0b5 !important;
   -webkit-text-fill-color: #fff0b5 !important;
 }
+
+
+/* REPORTS EMPTY STATES + CASHFLOW CHART — BLACK / WHITE / CHAMPAGNE GOLD */
+.report-grid > .report-panel,
+.content .report-grid > .report-panel {
+  background: linear-gradient(145deg,#151515 0%,#090909 100%) !important;
+  border-color: rgba(226,196,119,.2) !important;
+  color: #f4f0e7 !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,.22) !important;
+}
+.report-panel .panelhead h2,
+.report-grid .report-panel .panelhead h2 {
+  color: #f4f0e7 !important;
+  -webkit-text-fill-color: #f4f0e7 !important;
+}
+.report-panel .panelhead p,
+.report-grid .report-panel .panelhead p {
+  color: #aaa69c !important;
+  -webkit-text-fill-color: #aaa69c !important;
+}
+.report-panel .report-empty,
+.report-grid .report-panel .report-empty {
+  min-height: 225px !important;
+  padding: 28px 18px !important;
+  gap: 10px !important;
+  color: #aaa69c !important;
+  background: transparent !important;
+}
+.report-panel .report-empty > svg,
+.report-grid .report-panel .report-empty > svg {
+  width: 42px !important;
+  height: 42px !important;
+  padding: 10px !important;
+  box-sizing: content-box !important;
+  border: 1px solid rgba(226,196,119,.25) !important;
+  border-radius: 15px !important;
+  background: rgba(226,196,119,.07) !important;
+  color: #e2c477 !important;
+  stroke: #e2c477 !important;
+}
+.report-panel .report-empty b,
+.report-grid .report-panel .report-empty b {
+  color: #f4f0e7 !important;
+  -webkit-text-fill-color: #f4f0e7 !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+  letter-spacing: -.15px !important;
+}
+.report-panel .report-empty span,
+.report-grid .report-panel .report-empty span {
+  color: #aaa69c !important;
+  -webkit-text-fill-color: #aaa69c !important;
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+}
+.report-chart .recharts-area-curve[stroke="#d8a493"],
+.report-chart .recharts-line-curve[stroke="#d8a493"] {
+  stroke: #c7c1b5 !important;
+}
+.report-chart .recharts-area-area[fill="rgba(215,212,204,.08)"] {
+  fill: rgba(199,193,181,.08) !important;
+}
+.report-donut .recharts-pie-sector path[fill] { stroke: #090909 !important; }
+.report-panel .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #141414 !important;
+  border: 1px solid rgba(226,196,119,.28) !important;
+  color: #f4f0e7 !important;
+}
