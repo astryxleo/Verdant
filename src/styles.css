@@ -913,3 +913,149 @@ textarea:focus-visible {
   border-color: rgba(224,194,119,.35) !important;
   box-shadow: 0 0 16px rgba(224,194,119,.10) !important;
 }
+
+
+/* LAST-MILE LUXURY FIX: neutralize lingering emerald states inside dashboard tabs */
+:root {
+  accent-color: #e2c477 !important;
+}
+input,
+select,
+textarea,
+input:focus,
+select:focus,
+textarea:focus,
+.search:focus-within,
+.filter-control:focus-within,
+.username-input-wrap,
+.settings-panel input,
+.settings-panel select,
+.settings-panel textarea,
+.modal input,
+.modal select,
+.modal textarea,
+.bank-modal input,
+.bank-modal select,
+.bank-modal textarea {
+  background-color: #101010 !important;
+  color: #f4f0e7 !important;
+  border-color: rgba(224,194,119,.22) !important;
+  caret-color: #f0d58a !important;
+}
+input:focus,
+select:focus,
+textarea:focus,
+.search:focus-within,
+.filter-control:focus-within,
+.username-input-wrap:focus-within {
+  outline-color: rgba(224,194,119,.55) !important;
+  box-shadow: 0 0 0 3px rgba(224,194,119,.075) !important;
+}
+.switchtype .chosen.inc,
+.switchtype .chosen.exp,
+.switchtype button.chosen,
+.day-switch button.active,
+.filter-control select,
+.filter-control input,
+.search input,
+.date-range input {
+  background-color: #151515 !important;
+  color: #e8e5de !important;
+  border-color: rgba(224,194,119,.24) !important;
+}
+.switchtype .chosen.inc,
+.switchtype .chosen.exp {
+  background: linear-gradient(110deg,rgba(224,194,119,.13),rgba(255,255,255,.025)) !important;
+  color: #f0d58a !important;
+  border-color: rgba(224,194,119,.3) !important;
+}
+.positive,
+.valid-tag,
+.valid-stat,
+.import-note,
+.username-status.available,
+.summary-card.green b,
+.report-kpis .summary-card.green,
+.summary-card.green {
+  color: #e2c477 !important;
+}
+.valid-tag,
+.summary-card.green,
+.report-kpis .summary-card.green {
+  background: rgba(224,194,119,.075) !important;
+  border-color: rgba(224,194,119,.2) !important;
+}
+.username-status.available svg,
+.valid-stat svg,
+.import-note svg {
+  color: #e2c477 !important;
+}
+.confirm-backdrop {
+  z-index: 10000 !important;
+  background: rgba(0,0,0,.76) !important;
+  backdrop-filter: blur(12px) !important;
+}
+.confirm-modal {
+  width: min(100%, 420px) !important;
+  padding: 27px !important;
+  border-color: rgba(224,194,119,.25) !important;
+  background: linear-gradient(145deg,#1b1b1b,#090909) !important;
+  box-shadow: 0 30px 100px rgba(0,0,0,.72), 0 0 45px rgba(224,194,119,.045) !important;
+}
+.confirm-symbol {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  color: #f0d58a;
+  background: rgba(224,194,119,.09);
+  border: 1px solid rgba(224,194,119,.24);
+}
+.confirm-modal .eyebrow {
+  margin-bottom: 8px;
+  color: #e2c477 !important;
+}
+.confirm-modal h2 {
+  margin: 0 0 10px !important;
+  color: #fffdf7 !important;
+  font: 750 22px Manrope, sans-serif !important;
+  letter-spacing: -.5px;
+}
+.confirm-modal p {
+  margin: 0 !important;
+  color: #aaa69c !important;
+  font-size: 12px !important;
+  line-height: 1.75 !important;
+}
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+.confirm-actions button {
+  min-height: 40px;
+}
+.confirm-cancel {
+  background: #171717 !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  color: #e5e1d8 !important;
+  box-shadow: none !important;
+}
+.confirm-cancel:hover {
+  background: #222 !important;
+  border-color: rgba(224,194,119,.25) !important;
+}
+.confirm-delete {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+@media(max-width:480px) {
+  .confirm-modal { padding: 22px 19px !important; }
+  .confirm-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .confirm-actions button { justify-content: center; }
+}
