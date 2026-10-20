@@ -883,3 +883,33 @@ textarea:focus-visible {
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   .mouse-follow-glow { display: none !important; }
 }
+
+
+/* HARD OVERRIDE: NO GREEN ON ANY TAB STATE */
+.orbit-nav .orbit-item,
+.orbit-nav .orbit-item .orbit-icon,
+.orbit-nav .orbit-item.active,
+.orbit-nav .orbit-item.active .orbit-icon,
+.orbit-nav .orbit-item:hover,
+.orbit-nav .orbit-item:hover .orbit-icon,
+.orbit-nav .orbit-item:focus,
+.orbit-nav .orbit-item:focus-visible,
+.orbit-nav .orbit-item:active {
+  color: #e8e5de !important;
+  background: #121212 !important;
+  border-color: rgba(255,255,255,.12) !important;
+  box-shadow: none !important;
+}
+.orbit-nav .orbit-item.active {
+  color: #f0d58a !important;
+  background: linear-gradient(100deg,rgba(224,194,119,.13),rgba(255,255,255,.025)) !important;
+  border-color: rgba(224,194,119,.34) !important;
+  box-shadow: inset 3px 0 0 #e2c477 !important;
+}
+.orbit-nav .orbit-item.active .orbit-icon,
+.orbit-nav .orbit-item:hover .orbit-icon {
+  color: #17130a !important;
+  background: linear-gradient(145deg,#f1d991,#b18a37) !important;
+  border-color: rgba(224,194,119,.35) !important;
+  box-shadow: 0 0 16px rgba(224,194,119,.10) !important;
+}
