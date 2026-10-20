@@ -153,3 +153,68 @@ td{border-color:#252744;color:#b2b6d0}tbody tr:hover{background:#191c33}
 .calendar-legend{display:flex;align-items:center;gap:13px;margin-top:12px;color:#a0a4c3;font-size:9px}
 .calendar-legend span{display:flex;align-items:center;gap:5px}.calendar-legend small{margin-left:auto;color:#7f85a9}
 @media(max-width:650px){.finance-calendar{padding:15px 10px}.calendar-grid{gap:3px}.calendar-day{min-height:57px;padding:5px;border-radius:6px;gap:4px}.calendar-day>span{font-size:9px}.calendar-day small{font-size:7px}.calendar-day b{font-size:8px}.calendar-weekday{font-size:8px}.calendar-summary{gap:6px;flex-wrap:wrap}.calendar-summary>div{padding:8px}.calendar-summary span{font-size:9px}.calendar-summary b{font-size:10px}.month-tools{flex-wrap:wrap;justify-content:flex-end}.month-picker{max-width:125px}.report-btn{padding:8px}}
+
+/* Theme switcher */
+.header-actions{display:flex;align-items:center;gap:10px}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #34375c;border-radius:9px;padding:8px 10px;background:#151832;color:#c6bcff;font-size:10px;white-space:nowrap}
+.theme-toggle:hover{border-color:#a99aff}
+.light-theme{background:#f4f5fb;color:#20233e}
+.light-theme main{background:#f4f5fb}
+.light-theme .sidebar{background:#fff;border-color:#e3e5f2}
+.light-theme .brand b{color:#252846}
+.light-theme .brand small{color:#8a8eaa}
+.light-theme .nav{color:#737894}
+.light-theme .nav.active{background:#efedff;border-color:#d6d0ff;color:#5a4db5}
+.light-theme .nav span{background:#e7e4ff;color:#6559b4}
+.light-theme .privacy{background:#f1f0ff;border-color:#dedaff}
+.light-theme .privacy b{color:#302d56}
+.light-theme .privacy small{color:#777b9b}
+.light-theme .user{border-color:#e4e5f1}
+.light-theme .usertext b{color:#272a48}
+.light-theme .usertext small{color:#8589a5}
+.light-theme header{background:#fff;border-color:#e5e6f1}
+.light-theme .crumb{color:#8185a0}.light-theme .crumb b{color:#343757}
+.light-theme .private{background:#f7f7ff;border-color:#e0e2f2;color:#666b88}
+.light-theme .theme-toggle{background:#efedff;border-color:#d6d0ff;color:#5b4eb4}
+.light-theme .content{color:#222541}
+.light-theme .welcome h1{color:#252846}.light-theme .welcome p{color:#747995}
+.light-theme .eyebrow{color:#6556c3}
+.light-theme .metric,.light-theme .panel,.light-theme .p3-card,.light-theme .recurring-panel,.light-theme .finance-calendar{background:#fff;border-color:#e2e4f1;box-shadow:0 4px 20px #22254b08}
+.light-theme .metatop>span,.light-theme .panelhead p,.light-theme .month-metrics span,.light-theme .insight-card p{color:#777c99}
+.light-theme .metric>strong,.light-theme .panelhead h2,.light-theme .month-metrics b,.light-theme .insight-card b,.light-theme .p3-head h2,.light-theme .recurring-details b{color:#272a48}
+.light-theme .metric>small,.light-theme .panelfoot,.light-theme .catlist span,.light-theme .calendar-count,.light-theme .calendar-weekday,.light-theme .calendar-day small{color:#858aa5}
+.light-theme .month-metrics>div,.light-theme .insight-card,.light-theme .calendar-summary>div,.light-theme .calendar-day,.light-theme .recurring-summary>div,.light-theme .recurring-item{background:#f7f7fd;border-color:#e5e6f3}
+.light-theme .insight-card b,.light-theme .calendar-title,.light-theme .calendar-summary b,.light-theme .calendar-day>span,.light-theme .calendar-day b,.light-theme .recurring-summary b{color:#2c2f50}
+.light-theme .insight-symbol,.light-theme .p3-icon,.light-theme .recurring-symbol{background:#efedff;color:#6a5ac5}
+.light-theme .p3-head p,.light-theme .p3-goal-name small,.light-theme .p3-caption,.light-theme .recurring-details small,.light-theme .recurring-private{color:#777c99}
+.light-theme .p3-card input,.light-theme .p3-card select,.light-theme .recurring-form input,.light-theme .recurring-form select,.light-theme .search,.light-theme .tools select,.light-theme .month-picker{background:#fff;border-color:#dfe1ef;color:#292c4c}
+.light-theme .p3-card label,.light-theme .recurring-form label{color:#676c8b}
+.light-theme .p3-btn,.light-theme .recurring-add{background:#efedff;border-color:#d7d1ff;color:#5e50ba}
+.light-theme .p3-track{background:#e9eaf5}
+.light-theme .p3-empty,.light-theme .recurring-empty{border-color:#dfe1ef;color:#777c99}
+.light-theme .p3-goal-name b,.light-theme .recurring-empty b{color:#2c2f50}
+.light-theme .transactions th{background:#f4f4fc;color:#777c99;border-color:#e5e6f1}
+.light-theme .transactions td{color:#626783;border-color:#eaebf4}
+.light-theme .transname b{color:#2b2e4e}
+.light-theme .transname small{color:#858aa5}
+.light-theme .tag{background:#f1f0ff;border-color:#e0ddff;color:#6258a3}
+.light-theme .search input{color:#292c4c}.light-theme .search input::placeholder{color:#989cb4}
+.light-theme .calendar-day.calendar-today{border-color:#9a8be8}
+.light-theme .calendar-day.has-activity{background:#f0efff}
+.light-theme .calendar-legend,.light-theme .calendar-legend small{color:#777c99}
+.light-theme .pagination{border-color:#e5e6f1;color:#777c99}
+.light-theme .pagination b{color:#343757}
+.light-theme .pagination button{background:#f4f3ff;border-color:#dfdcf5;color:#6258a3}
+.light-theme .modal{background:#fff;border-color:#dedff0}
+.light-theme .modalhead h2{color:#272a48}.light-theme .modalhead p{color:#777c99}
+.light-theme .modal label{color:#676c8b}
+.light-theme .modal input,.light-theme .modal select{background:#fafaff;border-color:#dfe1ef;color:#292c4c}
+.light-theme .switchtype{background:#f4f4fc;border-color:#e1e3f0}
+.light-theme .switchtype button{color:#777c99}
+.light-theme .switchtype .chosen.inc{background:#e8fbf5;border-color:#c4eee0;color:#187d67}
+.light-theme .switchtype .chosen.exp{background:#fff0f4;border-color:#ffd6e1;color:#b64c6c}
+.light-theme .secure{color:#858aa5}
+.light-theme .toast{background:#e8fbf5;border-color:#bfeada;color:#187d67}
+.light-theme .tablefoot{border-color:#e5e6f1;color:#858aa5}
+.light-theme footer{color:#858aa5}
+@media(max-width:560px){.header-actions{gap:6px}.theme-toggle{padding:7px}.theme-toggle span{display:none}}
