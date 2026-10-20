@@ -337,3 +337,42 @@ td{border-color:#292318;color:#c2b99f}tbody tr:hover{background:#1b170f}
 .orbit-hint{font-size:7px;color:#88744b;letter-spacing:.15px;text-align:center}.orbit-hint span{color:#e8c36a}
 @media(max-width:850px){.orbit-stage{height:294px}}
 @media(max-width:560px){.orbit-stage{height:270px}.orbit-nav{margin:12px auto 8px}.orbit-heading small{font-size:5px}}
+
+
+/* Global custom cursor: preserve the supplied pointer's emerald/gold visual language. */
+body.verdant-custom-cursor,
+body.verdant-custom-cursor *,
+body.verdant-custom-cursor *::before,
+body.verdant-custom-cursor *::after {
+  cursor: none !important;
+}
+.verdant-cursor {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: none !important;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0,0,0);
+  will-change: left, top;
+  contain: layout style;
+}
+.verdant-cursor.is-visible { opacity: 1; visibility: visible; }
+.verdant-cursor-art {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 1px 1px #000b);
+}
+.verdant-cursor.is-arrow .verdant-cursor-art { transform: translate(-2px,-2px); }
+.verdant-cursor.is-pointer .verdant-cursor-art { transform: translate(-5px,-3px); }
+@media (pointer: coarse) {
+  body.verdant-custom-cursor,
+  body.verdant-custom-cursor *,
+  body.verdant-custom-cursor *::before,
+  body.verdant-custom-cursor *::after { cursor: auto !important; }
+  .verdant-cursor { display: none; }
+}
