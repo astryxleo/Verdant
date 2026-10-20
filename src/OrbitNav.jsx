@@ -22,7 +22,7 @@ export default function OrbitNav({transactionCount=0,activeTab='overview',onNavi
  const stage=useRef(null),drag=useRef(null);
  function angleAt(e){
   const r=stage.current.getBoundingClientRect();
-  return Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-r.left)*180/Math.PI;
+  return Math.atan2(e.clientY-(r.top+135),e.clientX-r.left)*180/Math.PI;
  }
  function snap(value){
   const i=closestItem(value),next=-angles[i];
@@ -53,15 +53,15 @@ export default function OrbitNav({transactionCount=0,activeTab='overview',onNavi
    <div className="orbit-half-track" style={{transform:`rotate(${rotation}deg)`}}/>
    {items.map((item,index)=>{
     const angle=(angles[index]+rotation)*Math.PI/180;
-    const x=119+91*Math.cos(angle),y=135+91*Math.sin(angle),Icon=item.Icon;
+    const x=91*Math.cos(angle),y=135+91*Math.sin(angle),Icon=item.Icon;
     const isActive=activeTab===item.id;
-    return <button key={item.id} type="button" className={'orbit-node '+(selected===item.id?'orbit-at-marker ':'')+(isActive?'selected':'')} style={{left:x,top:y}} onClick={e=>{e.stopPropagation();choose(item,index)}} onPointerDown={e=>e.stopPropagation()} aria-label={'Open '+item.label} aria-current={isActive?'page':undefined} title={item.label}>
+    return <button key={item.id} type="button" className={'orbit-node '+(selected===item.id?'orbit-at-marker ':'')+(isActive?'selected':'')} style={{left:x,top:y}} onClick={e=>{e.stopPropagation();choose(item,index)}}  aria-label={'Open '+item.label} aria-current={isActive?'page':undefined} title={item.label}>
      <span className="orbit-icon"><Icon size={17}/></span>
      <span className="orbit-label">{item.label}{item.id==='transactions'&&transactionCount>0?<b>{transactionCount}</b>:null}</span>
     </button>;
    })}
    <div className="orbit-right-marker" aria-hidden="true"><span/></div>
   </div>
-  <div className="orbit-hint"><span>●</span> Drag the circle — icon beside the dot opens</div>
+  <div className="orbit-hint"><span>●</span> Drag the half-circle or any icon — the dot selects the tab</div>
  </nav>;
 }
