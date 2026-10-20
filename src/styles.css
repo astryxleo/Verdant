@@ -129,3 +129,40 @@
   border-top-color: #293b2f;
   color: #95a69a;
 }
+
+
+/* Import / Export hero panels: remove leftover light surfaces and unify card depth */
+.import-panel,
+.export-panel {
+  background: linear-gradient(145deg, #14241a 0%, #0f1b14 100%) !important;
+  border: 1px solid #2e4334;
+  color: #e2e9e2;
+}
+.import-hero,
+.export-panel .export-art {
+  background: transparent;
+}
+.import-hero h2,
+.export-panel h2 {
+  color: #eef1e8;
+}
+.import-hero p,
+.export-panel > p {
+  color: #9eafa2;
+}
+.export-stat > div {
+  background: linear-gradient(145deg, #192b20 0%, #122017 100%);
+  border-color: #304638;
+  color: #e2e9e2;
+  box-shadow: inset 0 1px 0 #ffffff06;
+}
+.export-stat span {
+  color: #9eafa2;
+}
+.export-stat b {
+  color: #f0d890;
+}
+.import-note,
+.export-panel .text-action {
+  color: #d9bd78;
+}
